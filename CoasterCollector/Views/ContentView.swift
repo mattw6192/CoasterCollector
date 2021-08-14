@@ -20,42 +20,40 @@ struct ContentView: View {
     @State private var newThemeParkLocation = ""
 
     var body: some View {
-        NavigationView {
-            TabView {
-                ThemeParksView()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Parks")
-                    }
-             
-                RollerCoastersView()
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .tabItem {
-                        Image(systemName: "map.fill")
-                        Text("Coasters")
-                    }
-                
-                AddACoasterView()
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .tabItem {
-                        Image(systemName: "plus.circle")
-                        Text("Add Coaster")
-                    }
-             
-                AddARideView()
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .tabItem {
-                        Image(systemName: "tram")
-                        Text("Add Ride")
-                    }
-             
-                RankingsView()
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .tabItem {
-                        Image(systemName: "chart.bar")
-                        Text("Rankings")
-                    }
-            }
+        TabView {
+            ThemeParksView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Parks")
+                }
+         
+            RollerCoastersView()
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .tabItem {
+                    Image(systemName: "map.fill")
+                    Text("Coasters")
+                }
+            
+            AddACoasterView()
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .tabItem {
+                    Image(systemName: "plus.circle")
+                    Text("Add Coaster")
+                }
+         
+            AddARideView()
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .tabItem {
+                    Image(systemName: "tram")
+                    Text("Add Ride")
+                }
+         
+            RankingsView()
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .tabItem {
+                    Image(systemName: "chart.bar")
+                    Text("Rankings")
+                }
         }
         
     }

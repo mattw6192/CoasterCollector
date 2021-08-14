@@ -33,6 +33,7 @@ struct AddARideView: View {
                 DatePicker("Ride Date", selection: $selectedDate, displayedComponents: [.date])
 
             }
+            Divider()
             Button (action: {
                 let ride = Rides(context: self.viewContext)
                 
@@ -49,9 +50,20 @@ struct AddARideView: View {
                 self.selectedDate = Date()
                 self.newRide = ""
             }){
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.green)
-                    .imageScale(.large)
+                Text("Submit")
+                    .font(.footnote)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
+                    .frame(minWidth: 0,
+                       maxWidth: .infinity,
+                       minHeight: 0,
+                       maxHeight: .infinity,
+                       alignment: .center)
+
             }
             
         }

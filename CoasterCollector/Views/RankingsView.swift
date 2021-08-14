@@ -35,7 +35,6 @@ struct RankingsView: View {
                 }
             }.navigationBarTitle(Text("Coasters"))
             .environment(\.editMode, isEditable ? .constant(.active) : .constant(.inactive))
-            
         }
     
     func move(from source: IndexSet, to destination: Int) {
