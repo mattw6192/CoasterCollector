@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Coasters" representedClassName=".Coasters" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="developer" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="rides" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rides" inverseName="ride" inverseEntity="Rides"/>
+        <relationship name="themePark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ThemePark" inverseName="coasters" inverseEntity="ThemePark"/>
+    </entity>
+    <entity name="Rides" representedClassName=".Rides" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="ride" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Coasters" inverseName="rides" inverseEntity="Coasters"/>
+    </entity>
+    <entity name="ThemePark" representedClassName=".ThemePark" syncable="YES">
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="coasters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Coasters" inverseName="themePark" inverseEntity="Coasters"/>
+    </entity>
+    <elements>
+        <element name="Coasters" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Rides" positionX="-63" positionY="18" width="128" height="59"/>
+        <element name="ThemePark" positionX="-54" positionY="27" width="128" height="74"/>
+    </elements>
+</model>

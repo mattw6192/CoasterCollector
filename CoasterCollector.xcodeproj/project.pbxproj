@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A83D495D26C81A22005890E5 /* CoasterCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D495C26C81A22005890E5 /* CoasterCollectorApp.swift */; };
+		A83D495F26C81A22005890E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D495E26C81A22005890E5 /* ContentView.swift */; };
+		A83D496126C81A23005890E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83D496026C81A23005890E5 /* Assets.xcassets */; };
+		A83D496426C81A23005890E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83D496326C81A23005890E5 /* Preview Assets.xcassets */; };
+		A83D496626C81A23005890E5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D496526C81A23005890E5 /* Persistence.swift */; };
+		A83D496926C81A23005890E5 /* CoasterCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A83D496726C81A23005890E5 /* CoasterCollector.xcdatamodeld */; };
+		A83D497426C81A23005890E5 /* CoasterCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D497326C81A23005890E5 /* CoasterCollectorTests.swift */; };
+		A83D497F26C81A23005890E5 /* CoasterCollectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D497E26C81A23005890E5 /* CoasterCollectorUITests.swift */; };
+		A83D498E26C81C8B005890E5 /* Rides+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D498D26C81C8B005890E5 /* Rides+CoreDataClass.swift */; };
+		A83D499026C81CAE005890E5 /* Rides+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D498F26C81CAE005890E5 /* Rides+CoreDataProperties.swift */; };
+		A83D499226C81CCF005890E5 /* ThemePark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D499126C81CCF005890E5 /* ThemePark+CoreDataClass.swift */; };
+		A83D499426C81CF0005890E5 /* ThemePark+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D499326C81CF0005890E5 /* ThemePark+CoreDataProperties.swift */; };
+		A83D499626C81D0E005890E5 /* Coasters+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D499526C81D0E005890E5 /* Coasters+CoreDataClass.swift */; };
+		A83D499A26C81D3B005890E5 /* Coasters+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D499926C81D3B005890E5 /* Coasters+CoreDataProperties.swift */; };
+		A83D499D26C81D95005890E5 /* RollerCoastersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D499C26C81D95005890E5 /* RollerCoastersView.swift */; };
+		A83D499F26C81DB2005890E5 /* AddARideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D499E26C81DB2005890E5 /* AddARideView.swift */; };
+		A83D49A126C81DCE005890E5 /* ThemeParksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D49A026C81DCE005890E5 /* ThemeParksView.swift */; };
+		A83D49A326C81E05005890E5 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D49A226C81E05005890E5 /* ListView.swift */; };
+		A83D49A526C81E1B005890E5 /* AddACoasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D49A426C81E1B005890E5 /* AddACoasterView.swift */; };
+		A83D49A726C81E30005890E5 /* RankingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D49A626C81E30005890E5 /* RankingsView.swift */; };
+		A83D49A926C81EB5005890E5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A83D49A826C81EB5005890E5 /* icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A83D497026C81A23005890E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A83D495126C81A22005890E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A83D495826C81A22005890E5;
+			remoteInfo = CoasterCollector;
+		};
+		A83D497B26C81A23005890E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A83D495126C81A22005890E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A83D495826C81A22005890E5;
+			remoteInfo = CoasterCollector;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A83D495926C81A22005890E5 /* CoasterCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoasterCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83D495C26C81A22005890E5 /* CoasterCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoasterCollectorApp.swift; sourceTree = "<group>"; };
+		A83D495E26C81A22005890E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A83D496026C81A23005890E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A83D496326C81A23005890E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A83D496526C81A23005890E5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		A83D496826C81A23005890E5 /* CoasterCollector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoasterCollector.xcdatamodel; sourceTree = "<group>"; };
+		A83D496A26C81A23005890E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A83D496F26C81A23005890E5 /* CoasterCollectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoasterCollectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83D497326C81A23005890E5 /* CoasterCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoasterCollectorTests.swift; sourceTree = "<group>"; };
+		A83D497526C81A23005890E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A83D497A26C81A23005890E5 /* CoasterCollectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoasterCollectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83D497E26C81A23005890E5 /* CoasterCollectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoasterCollectorUITests.swift; sourceTree = "<group>"; };
+		A83D498026C81A23005890E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A83D498D26C81C8B005890E5 /* Rides+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rides+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A83D498F26C81CAE005890E5 /* Rides+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rides+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A83D499126C81CCF005890E5 /* ThemePark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThemePark+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A83D499326C81CF0005890E5 /* ThemePark+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThemePark+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A83D499526C81D0E005890E5 /* Coasters+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coasters+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A83D499926C81D3B005890E5 /* Coasters+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coasters+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A83D499C26C81D95005890E5 /* RollerCoastersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerCoastersView.swift; sourceTree = "<group>"; };
+		A83D499E26C81DB2005890E5 /* AddARideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddARideView.swift; sourceTree = "<group>"; };
+		A83D49A026C81DCE005890E5 /* ThemeParksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeParksView.swift; sourceTree = "<group>"; };
+		A83D49A226C81E05005890E5 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		A83D49A426C81E1B005890E5 /* AddACoasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddACoasterView.swift; sourceTree = "<group>"; };
+		A83D49A626C81E30005890E5 /* RankingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsView.swift; sourceTree = "<group>"; };
+		A83D49A826C81EB5005890E5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A83D495626C81A22005890E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A83D496C26C81A23005890E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A83D497726C81A23005890E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A83D495026C81A22005890E5 = {
+			isa = PBXGroup;
+			children = (
+				A83D495B26C81A22005890E5 /* CoasterCollector */,
+				A83D497226C81A23005890E5 /* CoasterCollectorTests */,
+				A83D497D26C81A23005890E5 /* CoasterCollectorUITests */,
+				A83D495A26C81A22005890E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A83D495A26C81A22005890E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A83D495926C81A22005890E5 /* CoasterCollector.app */,
+				A83D496F26C81A23005890E5 /* CoasterCollectorTests.xctest */,
+				A83D497A26C81A23005890E5 /* CoasterCollectorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A83D495B26C81A22005890E5 /* CoasterCollector */ = {
+			isa = PBXGroup;
+			children = (
+				A83D499B26C81D76005890E5 /* Views */,
+				A83D498C26C81C64005890E5 /* Models */,
+				A83D495C26C81A22005890E5 /* CoasterCollectorApp.swift */,
+				A83D496026C81A23005890E5 /* Assets.xcassets */,
+				A83D496526C81A23005890E5 /* Persistence.swift */,
+				A83D496A26C81A23005890E5 /* Info.plist */,
+				A83D49A826C81EB5005890E5 /* icon.png */,
+				A83D496726C81A23005890E5 /* CoasterCollector.xcdatamodeld */,
+				A83D496226C81A23005890E5 /* Preview Content */,
+			);
+			path = CoasterCollector;
+			sourceTree = "<group>";
+		};
+		A83D496226C81A23005890E5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A83D496326C81A23005890E5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A83D497226C81A23005890E5 /* CoasterCollectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A83D497326C81A23005890E5 /* CoasterCollectorTests.swift */,
+				A83D497526C81A23005890E5 /* Info.plist */,
+			);
+			path = CoasterCollectorTests;
+			sourceTree = "<group>";
+		};
+		A83D497D26C81A23005890E5 /* CoasterCollectorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A83D497E26C81A23005890E5 /* CoasterCollectorUITests.swift */,
+				A83D498026C81A23005890E5 /* Info.plist */,
+			);
+			path = CoasterCollectorUITests;
+			sourceTree = "<group>";
+		};
+		A83D498C26C81C64005890E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A83D498D26C81C8B005890E5 /* Rides+CoreDataClass.swift */,
+				A83D498F26C81CAE005890E5 /* Rides+CoreDataProperties.swift */,
+				A83D499126C81CCF005890E5 /* ThemePark+CoreDataClass.swift */,
+				A83D499326C81CF0005890E5 /* ThemePark+CoreDataProperties.swift */,
+				A83D499526C81D0E005890E5 /* Coasters+CoreDataClass.swift */,
+				A83D499926C81D3B005890E5 /* Coasters+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A83D499B26C81D76005890E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A83D495E26C81A22005890E5 /* ContentView.swift */,
+				A83D499C26C81D95005890E5 /* RollerCoastersView.swift */,
+				A83D499E26C81DB2005890E5 /* AddARideView.swift */,
+				A83D49A026C81DCE005890E5 /* ThemeParksView.swift */,
+				A83D49A226C81E05005890E5 /* ListView.swift */,
+				A83D49A426C81E1B005890E5 /* AddACoasterView.swift */,
+				A83D49A626C81E30005890E5 /* RankingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A83D495826C81A22005890E5 /* CoasterCollector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A83D498326C81A23005890E5 /* Build configuration list for PBXNativeTarget "CoasterCollector" */;
+			buildPhases = (
+				A83D495526C81A22005890E5 /* Sources */,
+				A83D495626C81A22005890E5 /* Frameworks */,
+				A83D495726C81A22005890E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoasterCollector;
+			productName = CoasterCollector;
+			productReference = A83D495926C81A22005890E5 /* CoasterCollector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A83D496E26C81A23005890E5 /* CoasterCollectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A83D498626C81A23005890E5 /* Build configuration list for PBXNativeTarget "CoasterCollectorTests" */;
+			buildPhases = (
+				A83D496B26C81A23005890E5 /* Sources */,
+				A83D496C26C81A23005890E5 /* Frameworks */,
+				A83D496D26C81A23005890E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A83D497126C81A23005890E5 /* PBXTargetDependency */,
+			);
+			name = CoasterCollectorTests;
+			productName = CoasterCollectorTests;
+			productReference = A83D496F26C81A23005890E5 /* CoasterCollectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A83D497926C81A23005890E5 /* CoasterCollectorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A83D498926C81A23005890E5 /* Build configuration list for PBXNativeTarget "CoasterCollectorUITests" */;
+			buildPhases = (
+				A83D497626C81A23005890E5 /* Sources */,
+				A83D497726C81A23005890E5 /* Frameworks */,
+				A83D497826C81A23005890E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A83D497C26C81A23005890E5 /* PBXTargetDependency */,
+			);
+			name = CoasterCollectorUITests;
+			productName = CoasterCollectorUITests;
+			productReference = A83D497A26C81A23005890E5 /* CoasterCollectorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A83D495126C81A22005890E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					A83D495826C81A22005890E5 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					A83D496E26C81A23005890E5 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = A83D495826C81A22005890E5;
+					};
+					A83D497926C81A23005890E5 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = A83D495826C81A22005890E5;
+					};
+				};
+			};
+			buildConfigurationList = A83D495426C81A22005890E5 /* Build configuration list for PBXProject "CoasterCollector" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A83D495026C81A22005890E5;
+			productRefGroup = A83D495A26C81A22005890E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A83D495826C81A22005890E5 /* CoasterCollector */,
+				A83D496E26C81A23005890E5 /* CoasterCollectorTests */,
+				A83D497926C81A23005890E5 /* CoasterCollectorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A83D495726C81A22005890E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A83D496426C81A23005890E5 /* Preview Assets.xcassets in Resources */,
+				A83D496126C81A23005890E5 /* Assets.xcassets in Resources */,
+				A83D49A926C81EB5005890E5 /* icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A83D496D26C81A23005890E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A83D497826C81A23005890E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A83D495526C81A22005890E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A83D498E26C81C8B005890E5 /* Rides+CoreDataClass.swift in Sources */,
+				A83D499626C81D0E005890E5 /* Coasters+CoreDataClass.swift in Sources */,
+				A83D499F26C81DB2005890E5 /* AddARideView.swift in Sources */,
+				A83D496626C81A23005890E5 /* Persistence.swift in Sources */,
+				A83D496926C81A23005890E5 /* CoasterCollector.xcdatamodeld in Sources */,
+				A83D49A726C81E30005890E5 /* RankingsView.swift in Sources */,
+				A83D499226C81CCF005890E5 /* ThemePark+CoreDataClass.swift in Sources */,
+				A83D495F26C81A22005890E5 /* ContentView.swift in Sources */,
+				A83D499D26C81D95005890E5 /* RollerCoastersView.swift in Sources */,
+				A83D49A526C81E1B005890E5 /* AddACoasterView.swift in Sources */,
+				A83D499426C81CF0005890E5 /* ThemePark+CoreDataProperties.swift in Sources */,
+				A83D499A26C81D3B005890E5 /* Coasters+CoreDataProperties.swift in Sources */,
+				A83D49A326C81E05005890E5 /* ListView.swift in Sources */,
+				A83D49A126C81DCE005890E5 /* ThemeParksView.swift in Sources */,
+				A83D495D26C81A22005890E5 /* CoasterCollectorApp.swift in Sources */,
+				A83D499026C81CAE005890E5 /* Rides+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A83D496B26C81A23005890E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A83D497426C81A23005890E5 /* CoasterCollectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A83D497626C81A23005890E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A83D497F26C81A23005890E5 /* CoasterCollectorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A83D497126C81A23005890E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A83D495826C81A22005890E5 /* CoasterCollector */;
+			targetProxy = A83D497026C81A23005890E5 /* PBXContainerItemProxy */;
+		};
+		A83D497C26C81A23005890E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A83D495826C81A22005890E5 /* CoasterCollector */;
+			targetProxy = A83D497B26C81A23005890E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A83D498126C81A23005890E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A83D498226C81A23005890E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A83D498426C81A23005890E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CoasterCollector/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CoasterCollector/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Matt.CoasterCollector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A83D498526C81A23005890E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CoasterCollector/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CoasterCollector/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Matt.CoasterCollector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A83D498726C81A23005890E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoasterCollectorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Matt.CoasterCollectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoasterCollector.app/CoasterCollector";
+			};
+			name = Debug;
+		};
+		A83D498826C81A23005890E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoasterCollectorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Matt.CoasterCollectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoasterCollector.app/CoasterCollector";
+			};
+			name = Release;
+		};
+		A83D498A26C81A23005890E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoasterCollectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Matt.CoasterCollectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoasterCollector;
+			};
+			name = Debug;
+		};
+		A83D498B26C81A23005890E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoasterCollectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Matt.CoasterCollectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoasterCollector;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A83D495426C81A22005890E5 /* Build configuration list for PBXProject "CoasterCollector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A83D498126C81A23005890E5 /* Debug */,
+				A83D498226C81A23005890E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A83D498326C81A23005890E5 /* Build configuration list for PBXNativeTarget "CoasterCollector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A83D498426C81A23005890E5 /* Debug */,
+				A83D498526C81A23005890E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A83D498626C81A23005890E5 /* Build configuration list for PBXNativeTarget "CoasterCollectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A83D498726C81A23005890E5 /* Debug */,
+				A83D498826C81A23005890E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A83D498926C81A23005890E5 /* Build configuration list for PBXNativeTarget "CoasterCollectorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A83D498A26C81A23005890E5 /* Debug */,
+				A83D498B26C81A23005890E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A83D496726C81A23005890E5 /* CoasterCollector.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A83D496826C81A23005890E5 /* CoasterCollector.xcdatamodel */,
+			);
+			currentVersion = A83D496826C81A23005890E5 /* CoasterCollector.xcdatamodel */;
+			path = CoasterCollector.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A83D495126C81A22005890E5 /* Project object */;
+}
