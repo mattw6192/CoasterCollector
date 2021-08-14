@@ -35,7 +35,7 @@ struct AddACoasterView: View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("Park")) {
+                    Section(header: Text("Park").font(.subheadline)) {
                         Picker("Park", selection: $selectedIndex, content: {
                             ForEach(self.allParks.indices) { i in
                                 Text(allParks[i].name!).font(.subheadline).tag(i)

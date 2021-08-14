@@ -20,6 +20,7 @@ struct ThemeParksView: View {
     @State private var newThemeParkLocation = ""
 
     var body: some View {
+        NavigationView {
             List {
                 Section(header: Text("Add A New Park")) {
                     HStack {
@@ -70,6 +71,8 @@ struct ThemeParksView: View {
                 }
             }.navigationBarTitle(Text("Theme Parks"))
         }
+            
+    }
         
 }
 

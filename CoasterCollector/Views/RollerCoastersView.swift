@@ -18,27 +18,28 @@ struct RollerCoastersView: View {
     private var allCoasters: FetchedResults<Coasters>
 
     var body: some View {
+        NavigationView {
             List {
-                Section(header: Text("Current Coasters")) {
-                    ForEach(self.allCoasters) { coaster in
-                        NavigationLink(
-                            destination: DetailView(data: coaster)) {
-                                ListView(title: coaster.name ?? "unknown", caption: coaster.themePark?.name ?? "unknown")
-                            }
-                            
-                    }.onDelete { indexSet in
-                        let deleteItem = self.allCoasters[indexSet.first!]
-                        self.viewContext.delete(deleteItem)
-                        do {
-                            try self.viewContext.save()
-                        } catch {
-                            print (error)
+                ForEach(self.allCoasters) { coaster in
+                    NavigationLink(
+                        destination: DetailView(data: coaster)) {
+                            ListView(title: coaster.name ?? "unknown", caption: coaster.themePark?.name ?? "unknown")
                         }
+                        
+                }.onDelete { indexSet in
+                    let deleteItem = self.allCoasters[indexSet.first!]
+                    self.viewContext.delete(deleteItem)
+                    do {
+                        try self.viewContext.save()
+                    } catch {
+                        print (error)
                     }
-                    
                 }
+                    
             }.navigationBarTitle(Text("Coasters"))
         }
+            
+    }
         
 }
 

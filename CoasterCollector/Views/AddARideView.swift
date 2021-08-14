@@ -21,51 +21,52 @@ struct AddARideView: View {
     @State private var newRide = ""
 
     var body: some View {
-        List {
-            Section(header: Text("Coaster")) {
-                Picker("Coaster", selection: $selectedIndex, content: {
-                    ForEach(self.allCoasters.indices) { i in
-                        Text(allCoasters[i].name!).tag(i)
+        NavigationView {
+            VStack {
+                Form {
+                    Section(header: Text("Coaster").font(.subheadline)) {
+                        Picker("Coaster", selection: $selectedIndex, content: {
+                            ForEach(self.allCoasters.indices) { i in
+                                Text(allCoasters[i].name!).font(.subheadline).tag(i)
+                            }
+                        }).font(.subheadline)
                     }
-                })
-            }
-            Section(header: Text("Date")) {
-                DatePicker("Ride Date", selection: $selectedDate, displayedComponents: [.date])
+                    Section(header: Text("Date").font(.subheadline)) {
+                        DatePicker("Ride Date", selection: $selectedDate, displayedComponents: [.date]).font(.subheadline)
 
-            }
-            Divider()
-            Button (action: {
-                let ride = Rides(context: self.viewContext)
-                
-                ride.date = selectedDate
-                allCoasters[selectedIndex].addToRides(ride)
-                
-                do {
-                    try self.viewContext.save()
-                } catch {
-                    print(error)
+                    }
+                }.navigationBarTitle("Ride Details")
+                Button (action: {
+                    let ride = Rides(context: self.viewContext)
+                    
+                    ride.date = selectedDate
+                    allCoasters[selectedIndex].addToRides(ride)
+                    
+                    do {
+                        try self.viewContext.save()
+                    } catch {
+                        print(error)
+                    }
+                    
+                    self.selectedIndex = 0
+                    self.selectedDate = Date()
+                    self.newRide = ""
+                }){
+                    Text("Submit")
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(10)
+                        .frame(
+                           minHeight: 0,
+                           maxHeight: .infinity,
+                           alignment: .center)
+
                 }
-                
-                self.selectedIndex = 0
-                self.selectedDate = Date()
-                self.newRide = ""
-            }){
-                Text("Submit")
-                    .font(.footnote)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                    .background(Color.green)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(10)
-                    .frame(minWidth: 0,
-                       maxWidth: .infinity,
-                       minHeight: 0,
-                       maxHeight: .infinity,
-                       alignment: .center)
-
             }
-            
         }
             
     }

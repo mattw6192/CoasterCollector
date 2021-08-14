@@ -19,23 +19,24 @@ struct RankingsView: View {
     @State private var isEditable = false
     
     var body: some View {
+        NavigationView {
             List {
-                Section(header: Text("Rankings")) {
-                    ForEach(allCoasters) { coaster in
-                        NavigationLink(
-                            destination: RankingsCoasterDetailView(initCoaster: coaster)) {
-                            RankingsListView(title: coaster.name ?? "unknown", caption: coaster.themePark?.name ?? "unknown", rank:coaster.rank.description)
-                            }
-                    }.onMove(perform: move)
-                    .onLongPressGesture {
-                        withAnimation {
-                            self.isEditable = !self.isEditable
+                ForEach(allCoasters) { coaster in
+                    NavigationLink(
+                        destination: RankingsCoasterDetailView(initCoaster: coaster)) {
+                        RankingsListView(title: coaster.name ?? "unknown", caption: coaster.themePark?.name ?? "unknown", rank:coaster.rank.description)
                         }
+                }.onMove(perform: move)
+                .onLongPressGesture {
+                    withAnimation {
+                        self.isEditable = !self.isEditable
                     }
                 }
-            }.navigationBarTitle(Text("Coasters"))
+            }.navigationBarTitle(Text("Rankings"))
             .environment(\.editMode, isEditable ? .constant(.active) : .constant(.inactive))
         }
+            
+    }
     
     func move(from source: IndexSet, to destination: Int) {
         
@@ -44,7 +45,11 @@ struct RankingsView: View {
         for reverseIndex in stride(from: revisedItems.count - 1, through: 0, by: -1) {
             revisedItems[reverseIndex].setValue(reverseIndex+1, forKey: "rank")
         }
-        
+        do {
+            try self.viewContext.save()
+        } catch {
+            print(error)
+        }
     }
     
 }
