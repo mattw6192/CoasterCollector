@@ -22,7 +22,7 @@ struct RollerCoastersView: View {
             List {
                 ForEach(self.allCoasters) { coaster in
                     NavigationLink(
-                        destination: DetailView(data: coaster)) {
+                        destination: CoasterDetailView(initCoaster: coaster)) {
                             ListView(title: coaster.name ?? "unknown", caption: coaster.themePark?.name ?? "unknown")
                         }
                         
@@ -43,7 +43,10 @@ struct RollerCoastersView: View {
         
 }
 
-struct DetailView: View {
+struct CoasterDetailView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var data: Coasters
     
     @State private var name = ""
@@ -51,46 +54,73 @@ struct DetailView: View {
     @State private var category = ""
     @State private var rank = "9999"
     @State private var themePark = ""
-    @State private var rides = ""
+    
+    init(initCoaster: Coasters) {
+        self.name = initCoaster.name ?? "unknown"
+        self.developer = initCoaster.developer ?? "unknown"
+        self.category = initCoaster.category ?? "unknown"
+        self.themePark = initCoaster.themePark?.name ?? "unknown"
+        self.rank = initCoaster.rank.description
+        self.data = initCoaster
+    }
     
     var body: some View {
         VStack (alignment: .leading){
-            HStack {
-                Text("Name:")
-                Spacer()
-                TextField(data.name ?? "unknown", text: self.$name)
-            }
-            HStack (alignment: .top) {
-                Text("Developer:")
-                Spacer()
-                TextField(data.developer ?? "unknown", text: self.$developer)
-            }
-            HStack (alignment: .top) {
-                Text("Category:")
-                Spacer()
-                TextField(data.category ?? "unknown", text: self.$category)
-            }
-            HStack (alignment: .top) {
-                Text("Rank:")
-                Spacer()
-                TextField(data.rank.description, text: self.$rank)
-            }
-            HStack (alignment: .top) {
-                Text("Theme Park:")
-                Spacer()
-                Text(data.themePark?.name ?? "unknown")
-            }
-            HStack (alignment: .top) {
-                Text("Rides:")
-                Spacer()
-                VStack {
-                    ForEach(data.rides?.allObjects as! [Rides]) { rideObj in
-                        Text(itemFormatter.string(from: rideObj.date ?? Date()))
-                    }
+            Form {
+                Section(header: Text("Name").font(.subheadline)) {
+                    TextField("Name", text: self.$name).font(.subheadline)
                 }
-            }
-        }.padding()
-        Spacer()
+                Section(header: Text("Developer").font(.subheadline)) {
+                    TextField("Developer", text: self.$developer).font(.subheadline)
+                }
+                Section(header: Text("Category").font(.subheadline)) {
+                    TextField("Category", text: self.$category).font(.subheadline)
+                }
+                Section(header: Text("Rank").font(.subheadline)) {
+                    TextField("Rank", text: self.$rank).font(.subheadline).disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                }
+                Section(header: Text("Theme Park").font(.subheadline)) {
+                    TextField("Theme Park", text: self.$themePark).font(.subheadline)
+                }
+                Section(header: Text("Rides").font(.subheadline)) {
+                    //TextField("Rides", text: self.$newCoasterCategory).font(.subheadline)
+                    if (data.rides!.count > 0) {
+                        ForEach(data.rides?.allObjects as! [Rides]) { rideObj in
+                            Text(itemFormatter.string(from: rideObj.date ?? Date())).font(.subheadline)
+                        }
+                    } else {
+                        Text("None").font(.subheadline)
+                    }
+                    
+                }
+            }.navigationBarTitle("Coaster Details")
+            Button(action: {
+                data.setValue(self.name, forKey: "name")
+                data.setValue(self.developer, forKey: "developer")
+                data.setValue(self.category, forKey: "category")
+                data.setValue(Int(self.rank), forKey: "rank")
+                do {
+                    try self.viewContext.save()
+                } catch {
+                    print(error)
+                }
+                
+            }, label: {
+                Text("Save")
+                    .font(.footnote)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .background((self.name == "" || self.developer == "" || self.category == "") ? Color.gray : Color.green )
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
+                    .frame(
+                       alignment: .center)
+
+            }).disabled(self.name == "" || self.developer == "" || self.category == "")
+        }.padding(.all, 25)
+    
+        
     }
 }
 

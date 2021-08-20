@@ -31,6 +31,8 @@ struct AddACoasterView: View {
     
     @State private var selectedIndex = 0
 
+    @Environment(\.isEnabled) var isEnabled
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -84,13 +86,13 @@ struct AddACoasterView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding()
-                        .background(Color.green)
+                        .background((self.newCoasterName == "" || self.newCoasterDeveloper == "" || self.newCoasterCategory == "") ? Color.gray : Color.green )
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
                         .frame(
                            alignment: .center)
                         
-                }
+                }.disabled(self.newCoasterName == "" || self.newCoasterDeveloper == "" || self.newCoasterCategory == "")
             }.padding()
             
         }

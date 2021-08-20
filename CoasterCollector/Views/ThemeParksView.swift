@@ -51,11 +51,11 @@ struct ThemeParksView: View {
                         }
                     }
                 }.font(.headline)
-                Section(header: Text("Current Parks")) {
-                    ForEach(self.allParks) { park in
+                Section(header: Text("Parks")) {
+                    ForEach(self.allParks.indices, id:\.self) { index in
                         NavigationLink(
-                            destination: ParkDetailView(data: park)) {
-                                ListView(title: park.name!, caption: park.location!)
+                            destination: ParkDetailView(park: allParks[index])) {
+                                ListView(title: allParks[index].name!, caption: allParks[index].location!)
                             }
                         
                     }.onDelete { indexSet in
@@ -77,36 +77,77 @@ struct ThemeParksView: View {
 }
 
 struct ParkDetailView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     var data: ThemePark
     
     @State private var name = ""
     @State private var location = ""
     @State private var coasters = ""
     
+    init (park : ThemePark) {
+        
+        self.name = park.name ?? "unknown"
+        self.location = park.location ?? "unknown"
+        self.data = park
+    }
+    
     var body: some View {
         VStack (alignment: .leading){
-            HStack {
-                Text("Name:")
-                Spacer()
-                TextField(data.name ?? "unknown", text: self.$name)
-            }
-            HStack (alignment: .top) {
-                Text("Location:")
-                Spacer()
-                TextField(data.location ?? "unknown", text: self.$location)
-            }
-            HStack (alignment: .top) {
-                Text("Coasters:")
-                Spacer()
-                VStack {
-                    ForEach(data.coasters?.allObjects as! [Coasters]) { coasterObj in
-                        Text(coasterObj.name ?? "unknown")
+            Form {
+                Section(header: Text("Name").font(.subheadline)) {
+                    TextField(data.name ?? "unknown", text: self.$name).font(.subheadline)
+                }
+                Section(header: Text("Location").font(.subheadline)) {
+                    TextField(data.location ?? "unknown", text: self.$location).font(.subheadline)
+                }
+                Section(header: Text("Coasters").font(.subheadline)) {
+                    //TextField("Rides", text: self.$newCoasterCategory).font(.subheadline)
+                    if (data.coasters!.count > 0) {
+                        ForEach(data.coasters?.allObjects as! [Coasters]) { coasterObj in
+                            //Text(coasterObj.name ?? "unknown").font(.subheadline).disabled(true)
+                            NavigationLink(
+                                destination: CoasterDetailView(initCoaster: coasterObj)) {
+                                    ListView(title: coasterObj.name ?? "unknown", caption: coasterObj.themePark?.name ?? "unknown")
+                                }.navigationViewStyle(StackNavigationViewStyle())
+                        }
+                        //ForEach(self.allCoasters) { coaster in
+                        //    NavigationLink(
+                        //        destination: CoasterDetailView(initCoaster: coaster)) {
+                        //            ListView(title: coaster.name ?? "unknown", caption: coaster.themePark?.name ?? "unknown")
+                        //        }
+                                
+                        //}
+
+                    } else {
+                        Text("None").font(.subheadline)
                     }
+                    
+                }
+            }.navigationBarTitle("Park Details")
+            Button(action: {
+                data.setValue(self.name, forKey: "name")
+                data.setValue(self.location, forKey: "location")
+                do {
+                    try self.viewContext.save()
+                } catch {
+                    print(error)
                 }
                 
-                
-            }
+            }, label: {
+                Text("Save")
+                    .font(.footnote)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .background((self.name == "" || self.location == "") ? Color.gray : Color.green )
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
+                    .frame(
+                       alignment: .center)
+
+            }).disabled(self.name == "" || self.location == "")
         }.padding(.all, 25)
+
     }
 }
 
